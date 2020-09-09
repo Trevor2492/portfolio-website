@@ -1,0 +1,259 @@
+/*
+Colors used
+
+Text Color (Dark Gray): #2b2b2b;
+Primary Color (Purple): #357b70;
+Secondary Color (Orange): #e0b354;
+ */
+:root {
+  --primary-color: #357b70;
+  --secondary-color: #e0b354;
+  --dark-grey: #2b2b2b;
+  --button-background-color: #357b70;
+  --a-visited: #05676e;
+  --a-active: #489c79;
+  --sun-1: #edc655;
+  --sun-2: #fcffad;
+  --sun-3: #f76414;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+a{
+  color: var(--primary-color);
+}
+
+a:visited {
+  /* Visited Link*/
+  color: var(--a-visited);
+}
+
+a:hover, a:focus{
+  /* No underlining when hovering over a link*/
+  text-decoration: none;
+}
+
+a:active {
+  /* Selected link*/
+  color: var(--a-active);
+}
+
+button, .button {
+  /*Overwrites browser defaults and resets the border*/
+  border: none;
+  /*Takes the font from the outer container*/
+  font-family: inherit;
+  /*Styles the background color, font color, and text decoration (underline, etc.) of the button*/
+  background-color: var(--button-background-color);
+  color: white;
+  text-decoration: none;
+  /*Adds spacing to the button*/
+  padding: 10px;
+  border-radius: 20px;
+  /*Gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format*/
+  border-bottom: 2px solid rgba(0, 0, 0, .3);
+  transition: .2s opacity;
+}
+
+button:hover, button:focus, .button:hover, .button:focus {
+  /*Overwrites browser defaults and resets the border*/
+  border: none;
+  /*Takes the font from the outer container*/
+  font-family: inherit;
+  /*Styles the background color, font color, and text decoration (underline, etc.) of the button*/
+  background-color: var(--button-background-color);
+  color: white;
+  text-decoration: none;
+  /*Adds spacing to the button*/
+  padding: 10px;
+  border-radius: 20px;
+  /*Gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format*/
+  border-bottom: 2px solid rgba(0, 0, 0, .3);
+  /* lets the mouse appear as a hand when hovering over the button */
+  cursor: pointer;
+  /* reduces the opacity of the button to 70% */
+  opacity: 0.7;
+}
+
+/*This changes the "button_secondary" class on the page. (You MUST prefix it with a ".")*/
+.button_secondary {
+  background-color: var(--secondary-color);
+  color: var(--dark-grey);
+}
+
+.navigation-list__item--active {
+  text-decoration: none;
+}
+
+.profile__portrait {
+  float: left;
+  width: 250px;
+  margin-right: 40px;
+  border-radius: 50%;
+}
+
+.about__body {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.page-header {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+}
+
+.page-header__item {
+  flex: 0 1 200px;
+}
+
+.page-header__item:last-child {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.page-footer {
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.profile {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.social-media {
+}
+
+.navigation-list {
+  list-style-type: none;
+}
+
+.navigation-list li {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+/*This section combined with the @keyframes color-change section below, animate the sun
+in the "about me" page.
+breakdown of different "animation" properties:
+  animation-duration: 4s;
+  animation-name: color-change;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+*/
+.sun {
+  animation: 4s color-change infinite alternate linear;
+}
+
+@keyframes color-change {
+  0% {
+    fill: var(--sun-1);
+  }
+  50% {
+    fill: var(--sun-2);
+  }
+  100% {
+    fill: var(--sun-3);
+  }
+}
+
+.cloud-front {
+  animation: 30s cloud-move infinite alternate linear;
+}
+
+@keyframes cloud-move {
+  from {
+    transform: translate(0, 50px);
+  }
+  to {
+    transform: translate(200px, 50px);
+  }
+}
+
+.cloud-back {
+  animation: 34s cloud-move-reverse infinite alternate linear;
+}
+
+@keyframes cloud-move-reverse {
+  from {
+    transform: translate(446px, 48px);
+  }
+  to {
+    transform: translate(100px, 48px);
+  }
+}
+
+/*This section is the fallback for the CSS grid in older versions of browsers. This must ALWAYS come before the CSS Grid section*/
+.grid__item {
+  display: inline-block;
+  width: 33%;
+}
+
+/*This whole section will display the CSS Grid updates properly in updated browsers*/
+@supports (display: grid) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    margin: 0;
+  }
+
+  .grid__item {
+    background-color: lightgray;
+    width: auto;
+    min-height: auto;
+    margin: 15px;
+    padding: 15px;
+    padding-top: 5px;
+    border-radius: 20px;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media all and (min-width: 500px) and (max-width: 750px){
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media all and (max-width: 750px) {
+  .grid {
+    grid-gap: 10px;
+  }
+  .grid__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: 22px;
+  }
+}
