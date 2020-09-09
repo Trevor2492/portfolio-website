@@ -192,6 +192,16 @@ button:focus {
   text-align: center;
 }
 
+.about__table {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact__body {
+  margin: 0 auto;
+  text-align: center;
+}
+
 .page-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -228,6 +238,10 @@ button:focus {
 .profile {
   max-width: 700px;
   margin: 0 auto;
+}
+
+.work-page-title {
+  text-align: center;
 }
 
 * {
