@@ -37,23 +37,6 @@ a {
   color: #246a35;
 }
 
-a:visited {
-  /* Visited Link*/
-  color: #246a35;
-}
-
-a:hover,
-a:focus {
-  /* No underlining when hovering over a link*/
-  text-decoration: none;
-  color: #246a35;
-}
-
-a:active {
-  /* Selected link*/
-  color: #246a35;
-}
-
 button {
   border: none;
   font-family: inherit;
@@ -146,6 +129,7 @@ button:focus {
 
 .about__table {
   margin: 0 auto;
+  margin-top: 30px;
   text-align: center;
   padding: 10px;
   border: 1px solid white;
@@ -220,6 +204,12 @@ button:focus {
   color: rgb(245, 245, 245);
   font-size: 20px;
   border-radius: 30px;
+}
+
+.description {
+  max-width: 70%;
+  display: block;
+  text-align: center;
 }
 
 .my-work {
