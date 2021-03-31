@@ -206,10 +206,10 @@ button:focus {
   border-radius: 30px;
 }
 
-.description {
+.about-me {
   max-width: 70%;
   display: block;
-  text-align: center;
+  text-align: left;
 }
 
 .my-work {
@@ -401,16 +401,28 @@ breakdown of different "animation" properties:
   }
 }
 
-@media all and (max-width: 500px) {
+@media all and (max-width: 374px) {
   .grid {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
+  .about-me {
+    max-width: 120%;
+  }
+  .contact-info {
+    width: 300px;
+  }
 }
-@media all and (min-width: 500px) and (max-width: 750px) {
+@media all and (min-width: 374px) and (max-width: 750px) {
   .grid {
     -ms-grid-columns: 1fr 20px 1fr;
     grid-template-columns: 1fr 1fr;
+  }
+  .about-me {
+    max-width: 120%;
+  }
+  .contact-info {
+    width: 400px;
   }
 }
 @media all and (max-width: 750px) {
@@ -423,5 +435,11 @@ breakdown of different "animation" properties:
   }
   h1 {
     font-size: 22px;
+  }
+  .about-me {
+    max-width: 120%;
+  }
+  .contact-info {
+    width: 400px;
   }
 }
