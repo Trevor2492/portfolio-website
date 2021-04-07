@@ -184,7 +184,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(145deg, #246a35, #164722);
+  background-image: linear-gradient(145deg, #267c3b, #11381a);
   color: rgb(245, 245, 245);
   font-size: 20px;
   border-radius: 30px;
@@ -228,7 +228,7 @@ a {
   font-size: 20px;
   border-radius: 30px;
   background-attachment: fixed;
-  background-image: linear-gradient(145deg, #246a35, #164722);
+  background-image: linear-gradient(145deg, #267c3b, #11381a);
 }
 
 .contact {
